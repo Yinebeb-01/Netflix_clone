@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %} ">
+    {% block others %}
+    
+    {% endblock others %}
+</head>
+<body class='bg-black text-gray-100 font-primary'>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <script>
+        const nav = document.querySelector('nav')
+
+        document.addEventListener("scroll",e=>{
+            
+            if(scrollY>100){
+                nav.classList.add('bg-gray-900')
+          
+            }else{
+                nav.classList.remove('bg-gray-900')
+            }
+        })
+    </script>
+    <footer class=" px-5 py-10 ">
+        <ul class="flex justify-between items-center">
+            <li  style = "font-size:20px;font-family:Times New Roman"> &copy; 2022</li>
+            <li> <p style= "font-size:20px;font-family:Times New Roman"> Netflix Clone-Django</p></li>
+            <li><a class="nav-link text-black font-weight-bold" style ="color:orange
+; font-size:20px; font-family:Times New Roman;font-weight:bold"  href={% static "about.html" %} target="_blank">By Yinebeb Tariku</a></li>
+        </ul>
+    </footer> 
+</body>
+</html>
